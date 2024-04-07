@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: phoint-201046244662-cd0354
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  JWT_SECRET: hello
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: phoint-cd0354.c4ijvplpjjth.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100
+  PORT: "8000"
+metadata:
+  name: env-config

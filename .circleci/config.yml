@@ -14,31 +14,30 @@ jobs:
 
       # build and push Docker image
       - run:
-	        name: build feed api
-	        command: |       		
-            TAG=0.1.$CIRCLE_BUILD_NUM
+          name: build feed api
+          command: |
             docker build -t udagram-api-feed ./udagram-api-feed
-            docker tag udagram-api-feed phoint/udagram-api-feed:v$TAG
+            docker tag udagram-api-feed phoint/udagram-api-feed:v0.1.$CIRCLE_BUILD_NUM
       - run:
           name: build user api
           command: |
-      	    docker build -t udagram-api-user ./udagram-api-user
-      	    docker tag udagram-api-user phoint/udagram-api-user:v$TAG
+            docker build -t udagram-api-user ./udagram-api-user
+            docker tag udagram-api-user phoint/udagram-api-user:v0.1.$CIRCLE_BUILD_NUM
       - run:
-      	  name: build frontend
-      	  command: |
-      	    docker build -t udagram-frontend ./udagram-frontend
-      	    docker tag udagram-frontend phoint/udagram-frontend:v$TAG
+          name: build frontend
+          command: |
+            docker build -t udagram-frontend ./udagram-frontend
+            docker tag udagram-frontend phoint/udagram-frontend:v0.1.$CIRCLE_BUILD_NUM
       - run:
-      	  name: build reverse proxy
-      	  command: |
-      	    docker build -t udagram-reverseproxy ./udagram-reverseproxy
-      	    docker tag udagram-reverseproxy phoint/udagram-reverseproxy:v$TAG
+          name: build reverse proxy
+          command: |
+            docker build -t udagram-reverseproxy ./udagram-reverseproxy
+            docker tag udagram-reverseproxy phoint/udagram-reverseproxy:v0.1.$CIRCLE_BUILD_NUM
       - run:
           name: push images
           command: |
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-            docker push phoint/udagram-api-feed:v$TAG
-            docker push phoint/udagram-api-user:v$TAG
-            docker push phoint/udagram-frontend:v$TAG
-            docker push phoint/udagram-reverseproxy:v$TAG
+            docker push phoint/udagram-api-feed:v0.1.$CIRCLE_BUILD_NUM
+            docker push phoint/udagram-api-user:v0.1.$CIRCLE_BUILD_NUM
+            docker push phoint/udagram-frontend:v0.1.$CIRCLE_BUILD_NUM
+            docker push phoint/udagram-reverseproxy:v0.1.$CIRCLE_BUILD_NUM
