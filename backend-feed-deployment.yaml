@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
       - name: backend-feed
-        image: phoint/udagram-api-feed:v0.1.6
+        image: phoint/udagram-api-feed:v0.1.8
         ports: 
         - containerPort: 8080
         env:

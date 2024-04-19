@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
       - name: frontend-udagram
-        image: phoint/udagram-frontend:v0.1.6
+        image: phoint/udagram-frontend:v0.1.8
         ports: 
         - containerPort: 80
         resources:

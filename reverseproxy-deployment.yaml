@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
       - name: reverse-proxy
-        image: phoint/udagram-reverseproxy:v0.1.6
+        image: phoint/udagram-reverseproxy:v0.1.8
         ports: 
         - containerPort: 8080
         resources:
